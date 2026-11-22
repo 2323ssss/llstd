@@ -1,0 +1,5 @@
+.env
+node_modules/
+llstd-auctions/data/
+llstd-auctions/public/plate-uploads/
+npm-debug.log*

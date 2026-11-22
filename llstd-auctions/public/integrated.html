@@ -1,0 +1,188 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#0d0a14">
+  <meta name="referrer" content="no-referrer">
+  <title>مزادات اللوحات | قاموس أبو فلاح</title>
+  <link rel="stylesheet" href="/assets/style-Bmzk0BHk.css">
+  <link rel="stylesheet" href="/auctions/auction.css">
+</head>
+<body>
+  <div class="scene" aria-hidden="true">
+    <div class="stars"></div>
+    <div class="moon"></div>
+    <div class="dune" id="d1"><svg viewBox="0 0 1440 420" preserveAspectRatio="none"><path fill="#4a2c1a" d="M0 174C190 91 268 260 485 206S802 73 1003 161s286 29 437-30v289H0Z"/></svg></div>
+    <div class="dune" id="d2"><svg viewBox="0 0 1440 420" preserveAspectRatio="none"><path fill="#2a160f" d="M0 247c194-106 356-29 527-63s303-150 495-79 283 43 418 3v312H0Z"/></svg></div>
+  </div>
+  <div class="strip"></div>
+  <nav class="auction-nav">
+    <div class="wrap">
+      <a class="logo" href="/">قاموس أبو فلاح</a>
+      <ul id="auction-nav-list">
+        <li><a class="l" href="/">الرئيسية</a></li>
+        <li><a class="l on" href="/auctions/">مزادات اللوحات</a></li>
+      </ul>
+      <div class="thb" role="group" aria-label="تغيير المظهر">
+        <button type="button" data-theme-choice="night" aria-label="ليلي" aria-pressed="true">🌙</button>
+        <button type="button" data-theme-choice="light" aria-label="نهاري" aria-pressed="false">☀️</button>
+        <button type="button" data-theme-choice="sunset" aria-label="غروب" aria-pressed="false">🌇</button>
+      </div>
+      <div class="auction-account">
+        <span id="user-label" class="user-label">زائر</span>
+        <button id="login-button" class="button button-primary">دخول ديسكورد</button>
+        <button id="logout-button" class="button button-quiet hidden">خروج</button>
+      </div>
+      <button id="menu-toggle" class="burger" type="button" aria-expanded="false" aria-label="فتح القائمة">☰</button>
+    </div>
+  </nav>
+
+  <main class="page auction-page">
+    <section class="auction-hero wrap">
+      <div class="hero-copy">
+        <span class="eyebrow">سوق مجتمع LLSTD</span>
+        <h1>لوحتك لها<br><em>سومتها.</em></h1>
+        <p class="lead">مزادات اللوحات السعودية صارت في مكانها بين أهل القاموس. ادخل بحساب Discord، اعرض لوحتك أو زايد على غيرها.</p>
+        <div class="hero-actions">
+          <a href="#auctions" class="button button-primary">تصفح المزادات <span>↓</span></a>
+          <button id="hero-login" class="button button-outline">سجّل دخولك</button>
+        </div>
+      </div>
+      <div class="hero-plate" aria-hidden="true">
+        <div class="mini-plate">
+          <div class="mini-numbers"><b>٧٤٠</b><small>7 4 0</small></div>
+          <div class="mini-letters"><b>ع ب ن</b><small>B N E</small></div>
+          <div class="mini-ksa"><span>♔</span><small>K<br>S<br>A</small></div>
+        </div>
+        <div class="hero-caption"><span class="status-dot"></span> مزادات مفتوحة <b id="open-count">—</b></div>
+      </div>
+    </section>
+
+    <div class="wrap">
+      <div id="notice" class="notice hidden" role="status"></div>
+      <div id="privacy-notice" class="privacy-note hidden"></div>
+    </div>
+
+    <section id="auctions" class="panel auction-section">
+      <div class="wrap">
+        <div class="section-heading">
+          <div><span class="eyebrow">السوق</span><h2>المزادات المفتوحة</h2></div>
+          <span id="auction-count" class="count-pill">—</span>
+        </div>
+        <div id="auction-grid" class="auction-grid">
+          <div class="empty-state">سجّل دخولك عشان تظهر لك المزادات.</div>
+        </div>
+      </div>
+    </section>
+
+    <section id="create-section" class="panel auction-section hidden">
+      <div class="wrap">
+        <div class="section-heading">
+          <div><span class="eyebrow">أضف لوحة</span><h2>ابدأ مزادك</h2></div>
+          <span class="step-pill">عرض جديد</span>
+        </div>
+        <div class="creator-layout">
+          <form id="create-form" class="auction-card form-panel">
+            <div class="field-group">
+              <div class="field-heading"><label>تركيب اللوحة</label><span>٣ أحرف · ٤ أرقام</span></div>
+              <div class="slot-pickers">
+                <div id="digit-slots" class="slot-row" aria-label="اختيار الأرقام"></div>
+                <span class="slot-divider"></span>
+                <div id="letter-slots" class="slot-row" aria-label="اختيار الأحرف"></div>
+              </div>
+              <div class="field-heading template-heading"><label>لون اللوحة</label><span>معاينة مباشرة</span></div>
+              <div class="template-options">
+                <label class="template-option"><input type="radio" name="template" value="classic" checked><span class="swatch swatch-classic"></span> كلاسيكي</label>
+                <label class="template-option"><input type="radio" name="template" value="sand"><span class="swatch swatch-sand"></span> رملي</label>
+                <label class="template-option"><input type="radio" name="template" value="dark"><span class="swatch swatch-dark"></span> داكن</label>
+              </div>
+            </div>
+            <div class="form-grid">
+              <label class="input-field"><span>سعر البداية <small>ريال</small></span><input name="startingPrice" type="number" min="1" max="100000000" value="100" required></label>
+              <label class="input-field"><span>مدة المزاد <small>ساعات</small></span><input name="durationHours" type="number" min="1" max="168" value="24" required></label>
+            </div>
+            <input name="accessCode" type="hidden">
+            <p class="field-help">عند النشر سيُطلب منك كود الوصول؛ كل كود صالح للوحة واحدة ويُحذف بعد نجاح النشر. قد تسمح الإدارة لبعض الحسابات بالنشر دون كود.</p>
+            <button class="button button-primary button-wide" type="submit">نشر المزاد <span>←</span></button>
+          </form>
+          <div class="preview-wrap">
+            <div class="preview-label"><span>معاينة اللوحة</span><span class="live-tag"><i></i> مباشر</span></div>
+            <canvas id="plate-canvas" width="960" height="320" aria-label="معاينة اللوحة"></canvas>
+            <p>تُنشأ صورة اللوحة تلقائيًا وتظهر في لوق اللوحات الخاص بالإدارة.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="admin-section" class="panel auction-section hidden">
+      <div class="wrap">
+        <div class="section-heading">
+          <div><span class="eyebrow">للإدارة</span><h2>لوحة التحكم</h2></div>
+          <span class="step-pill">إعدادات المجتمع</span>
+        </div>
+        <div class="admin-grid">
+          <form id="codes-form" class="auction-card admin-panel">
+            <div class="panel-title"><span class="panel-icon">⌘</span><div><h3>أكواد الوصول</h3><p>الأكواد تظهر مرة واحدة فقط.</p></div></div>
+            <label class="input-field"><span>عدد الأكواد</span><input name="count" type="number" min="1" max="50" value="1" required></label>
+            <button class="button button-primary button-wide" type="submit">إنشاء الأكواد</button>
+            <pre id="codes-output" class="codes-output hidden"></pre>
+          </form>
+          <form id="settings-form" class="auction-card admin-panel">
+            <div class="panel-title"><span class="panel-icon">⚙</span><div><h3>الصلاحيات واللوقات</h3><p>استخدم معرّفات Discord الرقمية، مفصولة بفواصل.</p></div></div>
+            <label class="input-field"><span>رتب الإدارة</span><input name="adminRoleIds" placeholder="معرّفات الرتب"></label>
+            <label class="input-field"><span>رتب أوامر البوت</span><input name="commandRoleIds" placeholder="معرّفات الرتب"></label>
+            <label class="input-field"><span>رتب المنع</span><input name="blockedRoleIds" placeholder="معرّفات الرتب"></label>
+            <div class="form-grid">
+              <label class="input-field"><span>لوق اللوحات</span><input name="platesChannel" placeholder="Channel ID"></label>
+              <label class="input-field"><span>لوق المزايدات</span><input name="bidsChannel" placeholder="Channel ID"></label>
+            </div>
+            <div class="form-grid">
+              <label class="input-field"><span>قناة التحكم</span><input name="controlChannel" placeholder="Channel ID"></label>
+              <label class="input-field"><span>لوق الإدارة</span><input name="moderationChannel" placeholder="Channel ID"></label>
+            </div>
+            <label class="check-row"><input name="adminCanListWithoutCode" type="checkbox"><span>السماح للإدارة بعرض اللوحات دون كود</span></label>
+            <label class="check-row"><input name="logClientIps" type="checkbox"><span>تسجيل عنوان IP في لوق الإدارة الخاصة</span></label>
+            <p class="field-help">لا تفعّل تسجيل IP قبل توضيح ذلك للمستخدمين والتأكد أن قنوات اللوق خاصة.</p>
+            <div class="admin-actions">
+              <button class="button button-primary" type="submit">حفظ الإعدادات</button>
+              <button id="register-commands" class="button button-outline" type="button">تحديث أوامر البوت</button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="auction-footer">
+    <div class="wrap">
+      <a class="logo" href="/">قاموس أبو فلاح</a>
+      <div class="fnav"><a class="f" href="/">الرئيسية</a><a class="f" href="/auctions/">مزادات اللوحات</a></div>
+      <span>التجربة لا تعالج المدفوعات؛ إتمام البيع خارج التطبيق.</span>
+    </div>
+  </footer>
+
+  <dialog id="bid-dialog" class="bid-dialog">
+    <form id="bid-form" method="dialog">
+      <button class="dialog-close" type="button" id="close-dialog" aria-label="إغلاق">×</button>
+      <span class="eyebrow">تأكيد المزايدة</span>
+      <h2 id="bid-plate-title">—</h2>
+      <p class="bid-terms">أتعهد بأنني سأدفع كامل مبلغ المزايدة للبائع، ولن أخلف مزايدتي. أقر وأوافق على هذا التعهد قبل المشاركة.</p>
+      <label class="input-field"><span>مبلغ مزايدتك <small>ريال</small></span><input name="amount" type="number" min="1" required></label>
+      <label class="check-row terms-check"><input name="acceptTerms" type="checkbox" required><span>أوافق على التعهد وأتحمل مسؤولية مزايدتي</span></label>
+      <button class="button button-primary button-wide" type="submit">تأكيد المزايدة</button>
+    </form>
+  </dialog>
+  <dialog id="access-code-dialog" class="bid-dialog">
+    <form id="access-code-form">
+      <button class="dialog-close" type="button" id="access-code-cancel" aria-label="إلغاء">×</button>
+      <span class="eyebrow">تأكيد صلاحية العرض</span>
+      <h2>أدخل كود الوصول</h2>
+      <p class="bid-terms">يُستهلك الكود بعد نجاح نشر لوحة واحدة، ولا يمكن استخدامه مرة أخرى.</p>
+      <label class="input-field"><span>كود العرض</span><input name="accessCode" autocomplete="off" autocapitalize="characters" required></label>
+      <button class="button button-primary button-wide" type="submit">متابعة ونشر اللوحة</button>
+    </form>
+  </dialog>
+  <script src="/auctions/app.js" defer></script>
+</body>
+</html>

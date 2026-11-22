@@ -1,0 +1,10 @@
+{
+  "name": "llstd-plate-auctions",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Saudi plate auction app mounted by the main site server",
+  "main": "server.js",
+  "engines": {
+    "node": ">=20"
+  }
+}

@@ -1,0 +1,19 @@
+{
+  "name": "llstd",
+  "version": "2.1.0",
+  "private": true,
+  "description": "قاموس أبو فلاح مع مزادات اللوحات",
+  "main": "server-integrated.js",
+  "scripts": {
+    "start": "node server-integrated.js",
+    "check": "node --check server-integrated.js && node --check auction-nav.js && node --check llstd-auctions/server.js && node --check llstd-auctions/public/app.js"
+  },
+  "engines": {
+    "node": ">=20"
+  },
+  "dependencies": {
+    "discord.js": "^14.22.1",
+    "dotenv": "^16.6.1",
+    "express": "^5.1.0"
+  }
+}
